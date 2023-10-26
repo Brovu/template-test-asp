@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/plugins/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    
+    <div class="container body-content">
+        <nav class="d-flex gap-4 mb-5">
+            <a class="" href="~/Home/GioiThieu">Giới Thiệu</a>
+            <a href="~/Home/ThemMoi">Thêm Mới</a>
+            <a href="~/Home/DanhSach">Danh Sách</a>
+            <a href="~/Search/Index">Tìm Kiếm</a>
+        </nav>
+        @RenderBody()
+        <hr />
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

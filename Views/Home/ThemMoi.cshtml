@@ -1,0 +1,109 @@
+﻿@model Template_Test.Models.SinhVien
+
+@{
+    ViewBag.Title = "Thêm Mới Sinh Viên";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Thêm Mới Sinh Viên</h2>
+
+@using (Html.BeginForm("ThemMoi", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <hr />
+    <label class="control-label col-md-2">Mã số sinh viên</label>
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.maSV, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.maSV, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2 mt-2">Họ sinh viên</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.hoSV, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.hoSV, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2 mt-2">Tên sinh viên</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.tenSV, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.tenSV, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2 mt-2">Ngày sinh</label>
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.ngaySinh, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+            @Html.ValidationMessageFor(model => model.ngaySinh, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2 mt-2">Giới tính</label>
+
+        <div class="col-md-10 d-flex flex-column">
+            <label><input type="radio" name="gioiTinh" value="Nam" />Nam</label>
+            <label><input type="radio" name="gioiTinh" value="Nữ" />Nữ</label>
+            <label><input type="radio" name="gioiTinh" value="Khác" />Khác</label>
+
+            @Html.ValidationMessageFor(model => model.gioiTinh, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2 mt-2">Hình ảnh</label>
+
+        <div class="col-md-10">
+            <label><input type="file" name="anhSV" class="form-control" />Chọn ảnh</label>
+            @Html.ValidationMessageFor(model => model.anhSV, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2 mt-2">Địa chỉ</label>
+
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.diaChi, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.diaChi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2 mt-2">Lớp</label>
+        <div class="col-md-10">
+            <select name="maLop" class="form-control">
+                <option value="">Chọn lớp</option>
+                @foreach (var i in new Template_Test.Models.Template_63132843Entities2().Lops.ToList())
+                {
+                    <option value="@i.maLop">
+                        @i.tenLop
+                    </option>
+                }
+            </select>
+            @Html.ValidationMessageFor(model => model.maLop, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Thêm sinh viên" class="btn btn-success mt-2 mb-5" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Trở lại", "Index")
+</div>
+
+@section scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

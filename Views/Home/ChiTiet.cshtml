@@ -1,0 +1,28 @@
+﻿@model Template_Test.Models.SinhVien
+
+@{
+    ViewBag.Title = "ChiTiet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center mb-5">Thông Tin Chi Tiết</h2>
+
+<div class="container text-center border-1 d-flex justify-content-center gap-5">
+
+    <div>
+
+        <img src="@Html.DisplayFor(model => model.anhSV)" width="200" height="200" alt="ảnh sinh viên" class="circle"/>
+    </div>
+
+    <div class="d-flex flex-column">
+        <p>Mã Sinh Viên: @Html.DisplayFor(model => model.maSV)</p>
+        <p>Họ Sinh Viên: @Html.DisplayFor(model => model.hoSV)</p>
+        <p>Tên Sinh Viên: @Html.DisplayFor(model => model.tenSV)</p>
+        <p>Giới tính: @Html.DisplayFor(model => model.gioiTinh)</p>
+        <p>Địa chỉ: @Html.DisplayFor(model => model.diaChi)</p>
+        <p>Lớp: @Html.DisplayFor(model => model.Lop.tenLop)</p>
+
+    </div>
+
+</div>
+
