@@ -81,3 +81,7 @@ C:\Users\Brovu\Documents\Template_Test\obj\Debug\Template_Test.csproj.CoreCompil
 C:\Users\Brovu\Documents\Template_Test\obj\Debug\Template_Test.csproj.CopyComplete
 C:\Users\Brovu\Documents\Template_Test\obj\Debug\Template_Test.dll
 C:\Users\Brovu\Documents\Template_Test\obj\Debug\Template_Test.pdb
+C:\Users\Brovu\Documents\Template_Test\bin\PagedList.dll
+C:\Users\Brovu\Documents\Template_Test\bin\PagedList.Mvc.dll
+C:\Users\Brovu\Documents\Template_Test\bin\PagedList.xml
+C:\Users\Brovu\Documents\Template_Test\bin\PagedList.Mvc.xml

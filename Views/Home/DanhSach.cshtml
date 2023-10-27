@@ -1,9 +1,12 @@
-﻿@model IEnumerable<Template_Test.Models.SinhVien>
+﻿@using PagedList
+@using PagedList.Mvc
+@model IPagedList<Template_Test.Models.SinhVien>
 
 @{
     int i = 1;
     ViewBag.Title = "Danh Sách Sinh Viên";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
 <h2 class="text-success">Danh Sách Sinh Viên</h2>
@@ -86,3 +89,8 @@
     }
 
 </table>
+
+<div class="text-center">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("DanhSach", new { page }))
+</div>

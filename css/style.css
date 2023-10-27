@@ -1,3 +1,33 @@
 ﻿.circle {
     border-radius: 50%;
 }
+
+/* Điều hướng phân trang */
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;   
+}
+
+    .pagination li {
+        display: inline;
+        margin: 2px;
+    }
+
+        .pagination li a {
+            text-decoration: none;
+            background-color: #337ab7;
+            color: #fff;
+            padding: 5px 10px;
+        }
+
+            .pagination li a:hover {
+                background-color: #23527c;
+            }
+
+    .pagination .disabled a {
+        background-color: #ccc;
+        color: #777;
+    }

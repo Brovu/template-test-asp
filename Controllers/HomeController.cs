@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
 using Template_Test.Models;
+using PagedList;
+using System.Web.UI;
 
 namespace Template_Test.Controllers
 {
@@ -28,10 +30,14 @@ namespace Template_Test.Controllers
 
         //Controller Sinh Viên
 
-        public ActionResult DanhSach()
+        public ActionResult DanhSach(int? page)
         {
 
-            return View(new Template_63132843Entities2().SinhViens.ToList());
+            int pageSize = 2;
+            int pageNumber = (page ?? 1);
+
+            var sinhViens = new Template_63132843Entities2().SinhViens.ToList().ToPagedList(pageNumber, pageSize);
+            return View(sinhViens);
         }
 
         public ActionResult ThemMoi()
@@ -43,7 +49,7 @@ namespace Template_Test.Controllers
         [HttpPost]
         public ActionResult ThemMoi(SinhVien sv, HttpPostedFileBase anhSV)
         {
-            if(db.SinhViens.Any(x => x.maSV == sv.maSV))
+            if (db.SinhViens.Any(x => x.maSV == sv.maSV))
             {
                 ModelState.AddModelError("maSV", "Sinh viên này đã tồn tại");
                 return View(sv);
@@ -136,7 +142,7 @@ namespace Template_Test.Controllers
             return View(list);
         }
 
-     
+
 
     }
 }
