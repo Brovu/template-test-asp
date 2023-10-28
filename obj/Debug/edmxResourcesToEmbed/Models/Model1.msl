@@ -12,6 +12,7 @@
     <EntitySetMapping Name="SinhViens">
       <EntityTypeMapping TypeName="Template_63132843Model.SinhVien">
         <MappingFragment StoreEntitySet="SinhVien">
+          <ScalarProperty Name="age" ColumnName="age" />
           <ScalarProperty Name="maSV" ColumnName="maSV" />
           <ScalarProperty Name="hoSV" ColumnName="hoSV" />
           <ScalarProperty Name="tenSV" ColumnName="tenSV" />

@@ -21,6 +21,7 @@
     <Property Name="diaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="maLop" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Lop" Relationship="Self.FK_SinhVien_Lop" FromRole="SinhVien" ToRole="Lop" />
+    <Property Name="age" Type="Int32" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Template_63132843Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Template_63132843Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Lop">
           <Key>
             <PropertyRef Name="maLop" />
@@ -22,6 +22,7 @@
           <Property Name="ngaySinh" Type="date" />
           <Property Name="gioiTinh" Type="nvarchar" MaxLength="50" />
           <Property Name="anhSV" Type="nvarchar(max)" />
+          <Property Name="age" Type="int" />
           <Property Name="diaChi" Type="nvarchar" MaxLength="100" />
           <Property Name="maLop" Type="nvarchar" MaxLength="50" />
         </EntityType>
@@ -56,8 +57,7 @@
             <End Role="SinhVien" EntitySet="SinhVien" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Template_63132843Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -82,6 +82,7 @@
           <Property Name="diaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="maLop" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Lop" Relationship="Self.FK_SinhVien_Lop" FromRole="SinhVien" ToRole="Lop" />
+          <Property Name="age" Type="Int32" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -131,6 +132,7 @@
           <EntitySetMapping Name="SinhViens">
             <EntityTypeMapping TypeName="Template_63132843Model.SinhVien">
               <MappingFragment StoreEntitySet="SinhVien">
+                <ScalarProperty Name="age" ColumnName="age" />
                 <ScalarProperty Name="maSV" ColumnName="maSV" />
                 <ScalarProperty Name="hoSV" ColumnName="hoSV" />
                 <ScalarProperty Name="tenSV" ColumnName="tenSV" />

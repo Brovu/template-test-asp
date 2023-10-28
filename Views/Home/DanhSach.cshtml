@@ -30,6 +30,9 @@
             Ngày Sinh
         </th>
         <th>
+            Tuổi
+        </th>
+        <th>
             Giới Tính
         </th>
         <th>
@@ -66,6 +69,9 @@
                     string formattedBirth = birthDate?.ToString("dd/MM/yyyy");
                 }
                 @formattedBirth
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.age)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.gioiTinh)
